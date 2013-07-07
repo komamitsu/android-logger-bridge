@@ -1,4 +1,4 @@
-package com.komamitsu.android.util;
+package org.komamitsu.android.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

@@ -1,4 +1,4 @@
-package com.komamitsu.android.util;
+package org.komamitsu.android.util;
 
 import static org.junit.Assert.*;
 
@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.komamitsu.android.util.Log;
 
 public class LogTest {
     private static final String TAG = LogTest.class.getSimpleName();
@@ -66,7 +67,7 @@ public class LogTest {
         checkStdout(Pattern.compile(
                 "^W \\d{4}/\\d{2}/\\d{2} \\d{2}:\\d{2}:\\d{2}.\\d{3} LogTest test W\n" +
                         "W \\d{4}/\\d{2}/\\d{2} \\d{2}:\\d{2}:\\d{2}.\\d{3} LogTest java.lang.RuntimeException: WWWW\n" +
-                        "\\sat com.komamitsu.android.util.LogTest.testWWithException\\(LogTest.java:\\d+\\)"
+                        "\\sat org.komamitsu.android.util.LogTest.testWWithException\\(LogTest.java:\\d+\\)"
                 ));
     }
 
@@ -82,7 +83,7 @@ public class LogTest {
         checkStdout(Pattern.compile(
                 "^E \\d{4}/\\d{2}/\\d{2} \\d{2}:\\d{2}:\\d{2}.\\d{3} LogTest test E\n" +
                         "E \\d{4}/\\d{2}/\\d{2} \\d{2}:\\d{2}:\\d{2}.\\d{3} LogTest java.lang.RuntimeException: EEEE\n" +
-                        "\\sat com.komamitsu.android.util.LogTest.testEWithException\\(LogTest.java:\\d+\\)"
+                        "\\sat org.komamitsu.android.util.LogTest.testEWithException\\(LogTest.java:\\d+\\)"
                 ));
     }
 }

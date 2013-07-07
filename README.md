@@ -8,9 +8,9 @@ Android OS >= 2.2
 
 ## Usage
 
-You can use android-logger-bridge with importing com.komamitsu.android.util.Log.
+You can use android-logger-bridge with importing org.komamitsu.android.util.Log.
 
-    import com.komamitsu.android.util.Log;
+    import org.komamitsu.android.util.Log;
 
     public class FooActivity {
             private static final String TAG = FooActivity.class.getSimpleName();

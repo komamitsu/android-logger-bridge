@@ -3,6 +3,15 @@
   <groupId>org.komamitsu</groupId>
   <artifactId>android-logger-bridge</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <name>Android Logger Bridge</name>
+  <description>android-logger-bridge enables using Android Log util on non Android envinronment. If this library runs on Android, it outputs to logcat. If not, it outputs to stdout.</description>
+  <url>https://github.com/komamitsu/android-logger-bridge</url>
+
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
 
   <licenses>
     <license>
@@ -12,11 +21,22 @@
     </license>
   </licenses>
 
+  <scm>
+    <connection>scm:git:https://github.com/komamitsu/android-logger-bridge.git</connection>
+    <developerConnection>scm:git:git@github.com:komamitsu/android-logger-bridge.git</developerConnection>
+    <url>https://github.com/komamitsu/android-logger-bridge</url>
+  </scm>
+
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/komamitsu/android-logger-bridge/issues</url>
+  </issueManagement>
+
   <developers>
     <developer>
-    	<id>komamitsu</id>
-    	<name>Mitsunori Komatsu</name>
-    	<email>komamitsu@gmail.com</email>
+      <id>komamitsu</id>
+      <name>Mitsunori Komatsu</name>
+      <email>komamitsu@gmail.com</email>
     </developer>
   </developers>
 
@@ -29,6 +49,27 @@
           <target>1.6</target>
         </configuration>
       </plugin>
+
+      <plugin>
+        <artifactId>maven-eclipse-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
@@ -39,12 +80,14 @@
   		<version>4.1.1.4</version>
   		<scope>provided</scope>
   	</dependency>
+
   	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
   		<version>4.11</version>
   		<scope>test</scope>
   	</dependency>
+
   	<dependency>
   		<groupId>commons-lang</groupId>
   		<artifactId>commons-lang</artifactId>
@@ -52,3 +95,4 @@
   	</dependency>
   </dependencies>
 </project>
+

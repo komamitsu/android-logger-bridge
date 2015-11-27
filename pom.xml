@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.komamitsu</groupId>
   <artifactId>android-logger-bridge</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2</version>
   <name>Android Logger Bridge</name>
   <description>android-logger-bridge enables using Android Log util on non Android envinronment. If this library runs on Android, it outputs to logcat. If not, it outputs to stdout.</description>
   <url>https://github.com/komamitsu/android-logger-bridge</url>

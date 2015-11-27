@@ -1,14 +1,11 @@
 package org.komamitsu.android.util;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Calendar;
-
-import org.apache.commons.lang.time.DateFormatUtils;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Log {
     private static final Method V;
@@ -18,6 +15,7 @@ public class Log {
     private static final Method W2;
     private static final Method E;
     private static final Method E2;
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SS");
     static {
         Method tmpV = null;
         Method tmpD = null;
@@ -113,6 +111,8 @@ public class Log {
     }
 
     private static String getCalenderString() {
-        return DateFormatUtils.format(Calendar.getInstance(), "yyyy/MM/dd HH:mm:ss.SS");
+        synchronized (SimpleDateFormat.class) {
+            return dateFormat.format(new Date());
+        }
     }
 }
